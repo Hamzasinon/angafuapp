@@ -1,7 +1,11 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="row">
+
+
+
+
+  
     <div class="col-md-6">
       <div class="card">
         <form method="post" action="{% url 'addreserve' societe.id %}" class="form-horizontal">
@@ -63,7 +67,7 @@
             <div class="col-sm-9">
                     <select name="time" class="form-control" required>
                       {% for time in time %}
-                        <option value="{{time.id}}">{{time.time }}</option>
+                        <option value="{{time.id}}">{{time.time|time:"H:i" }}</option>
                         {% endfor %}
                     </select>
                 </div>
@@ -122,6 +126,7 @@
           </div>
         </form>
       </div>
+    </div>
     
 {% endblock  %}
     
